@@ -25,9 +25,9 @@ jobs:
       - checkout
       - run: pwd && ls -al
       - run: cd ./oppgave-1-task4
-      - run: bundle install --path vendor/bundle
-      - run: bundle exec rake db:create db:schema:load
-      - run: rake
+      - run: ls -al && bundle install --path vendor/bundle
+      - run: ls -al && bundle exec rake db:create db:schema:load
+      - run: ls -al && rake
 
   "ruby-2.3":
     docker:
@@ -38,9 +38,9 @@ jobs:
       - checkout
       - run: pwd && ls -al
       - run: cd ./oppgave-1-task4
-      - run: bundle install --path vendor/bundle
-      - run: bundle exec rake db:create db:schema:load
-      - run: rake
+      - run: ls -al && bundle install --path vendor/bundle
+      - run: ls -al && bundle exec rake db:create db:schema:load
+      - run: ls -al && rake
 
   "ruby-2.4":
     docker:
@@ -51,9 +51,9 @@ jobs:
       - checkout
       - run: pwd && ls -al
       - run: cd ./oppgave-1-task4
-      - run: bundle install --path vendor/bundle
-      - run: bundle exec rake db:create db:schema:load
-      - run: rake
+      - run: ls -al && bundle install --path vendor/bundle
+      - run: ls -al && bundle exec rake db:create db:schema:load
+      - run: ls -al && rake
 
 workflows:
   version: 2
