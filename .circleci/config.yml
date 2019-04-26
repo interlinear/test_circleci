@@ -23,6 +23,7 @@ jobs:
     working_directory: ~/ruby22
     steps:
       - checkout
+      - run: pwd && ls -al
       - run: cd ./oppgave1-task4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:create db:schema:load
@@ -35,6 +36,7 @@ jobs:
     working_directory: ~/ruby23
     steps:
       - checkout
+      - run: pwd && ls -al
       - run: cd ./oppgave1-task4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:create db:schema:load
@@ -47,6 +49,7 @@ jobs:
     working_directory: ~/ruby24
     steps:
       - checkout
+      - run: pwd && ls -al
       - run: cd ./oppgave1-task4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:create db:schema:load
@@ -56,6 +59,7 @@ workflows:
   version: 2
   build:
     jobs:
+      - install_node_in_ruby_image
       - "ruby-2.2"
       - "ruby-2.3"
       - "ruby-2.4"
