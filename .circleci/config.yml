@@ -12,4 +12,4 @@ jobs:
             curl https://www.npmjs.com/install.sh | sudo bash
       - run:
           name: Check current version of node
-          command: node -v
+          command: pwd && ls && node -v
