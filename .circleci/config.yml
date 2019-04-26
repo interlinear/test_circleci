@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - run: pwd && ls -al
-      - run: cd ./oppgave1-task4
+      - run: cd ./oppgave-1-task4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:create db:schema:load
       - run: rake
@@ -37,7 +37,7 @@ jobs:
     steps:
       - checkout
       - run: pwd && ls -al
-      - run: cd ./oppgave1-task4
+      - run: cd ./oppgave-1-task4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:create db:schema:load
       - run: rake
@@ -50,7 +50,7 @@ jobs:
     steps:
       - checkout
       - run: pwd && ls -al
-      - run: cd ./oppgave1-task4
+      - run: cd ./oppgave-1-task4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:create db:schema:load
       - run: rake
