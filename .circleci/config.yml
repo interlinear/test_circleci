@@ -60,8 +60,8 @@ workflows:
   build:
     jobs:
       - install_node_in_ruby_image
-      - "ruby-2.2"
-      - "ruby-2.3"
+      #- "ruby-2.2"
+      #- "ruby-2.3"
       - "ruby-2.4"
 
 # task5
