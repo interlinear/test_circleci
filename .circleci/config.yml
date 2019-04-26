@@ -1,6 +1,6 @@
 version: 2.0
 jobs:
-  build:
+  install_node_in_ruby_image:
     docker:
       - image: circleci/ruby:2.4.2-jessie-node
     steps:
@@ -13,3 +13,64 @@ jobs:
       - run:
           name: Check current version of node
           command: pwd && ls && node -v
+
+
+# task 4
+  "ruby-2.2":
+    docker:
+      - image: circleci/ruby:2.2-node
+      - image: circleci/postgres:9.4.12-alpine
+    working_directory: ~/ruby22
+    steps:
+      - checkout
+      - run: cd ./oppgave1-task4
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake db:create db:schema:load
+      - run: rake
+
+  "ruby-2.3":
+    docker:
+      - image: circleci/ruby:2.3-node
+      - image: circleci/postgres:9.4.12-alpine
+    working_directory: ~/ruby23
+    steps:
+      - checkout
+      - run: cd ./oppgave1-task4
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake db:create db:schema:load
+      - run: rake
+
+  "ruby-2.4":
+    docker:
+      - image: circleci/ruby:2.4-node
+      - image: circleci/postgres:9.4.12-alpine
+    working_directory: ~/ruby24
+    steps:
+      - checkout
+      - run: cd ./oppgave1-task4
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake db:create db:schema:load
+      - run: rake
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "ruby-2.2"
+      - "ruby-2.3"
+      - "ruby-2.4"
+
+# task5
+#version: 2
+#jobs:
+#  build:
+#
+#    working_directory: ~/circleci-demo-java-spring
+#
+#    docker:
+#      - image: circleci/openjdk:8-jdk-browsers
+#      - image: circleci/postgres:9.6.3-alpine
+#        environment:
+#          POSTGRES_USER: root
+#          POSTGRES_DB: circle_test
+#
